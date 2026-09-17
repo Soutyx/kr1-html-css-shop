@@ -30,3 +30,4 @@
 
 Создана базовая структура проекта.
 
+https://soutyx.github.io/kr1-html-css-shop/
