@@ -110,8 +110,25 @@ a:focus-visible {
   чтобы оно не растягивалось слишком сильно на широких экранах.
 */
 .site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
   max-width: var(--container-width);
   margin: 0 auto;
+  padding-top: var(--space-md);
+}
+
+.site-header__badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2px var(--space-sm);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
 }
 
 /*
@@ -127,8 +144,11 @@ a:focus-visible {
   Убираем стандартные отступы и маркеры списка навигации.
 */
 .site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
   padding: 0;
-  margin: var(--space-md) 0 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -136,7 +156,7 @@ a:focus-visible {
   Добавляем расстояние между пунктами меню.
 */
 .site-nav__list li {
-  margin-bottom: var(--space-sm);
+  margin: 0;
 }
 
 /*
@@ -172,13 +192,69 @@ a:focus-visible {
   margin-top: 0;
 }
 
+.product-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+}
+
+.product-grid__label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px var(--space-sm);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
 .product-card {
-  margin-bottom: var(--space-md);
-  padding: var(--space-md);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: var(--space-xl) var(--space-md) var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
 }
+
+.product-card__badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: 2px var(--space-sm);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+.product-card__button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.to-top {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 10;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.to-top:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
 
 .product-card:hover {
   border-color: var(--color-primary);
