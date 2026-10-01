@@ -1,10 +1,5 @@
 /* ===============================
    1. Переменные проекта
-  =============================== */
-
-
-  /* ===============================
-   1. Переменные проекта
    =============================== */
 
 :root {
@@ -38,10 +33,10 @@
   --container-width: 1100px;
 }
 
-
 /* ===============================
    2. Базовые стили
-  =============================== */
+   =============================== */
+
 * {
   box-sizing: border-box;
 }
@@ -53,7 +48,6 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
 }
-
 
 header,
 main,
@@ -71,9 +65,7 @@ footer {
 
 /* ===============================
    3. Общие элементы интерфейса
-  =============================== */
-
-
+   =============================== */
 
 a {
   color: var(--color-primary);
@@ -88,10 +80,6 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-.site-header {
-  max-width: 1100px;
-  margin: 0 auto;
-}
 .button {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
@@ -117,6 +105,14 @@ a:focus-visible {
   cursor: not-allowed;
 }
 
+/*
+  Ограничиваем ширину содержимого шапки,
+  чтобы оно не растягивалось слишком сильно на широких экранах.
+*/
+.site-header {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
 
 /*
   Оформляем текстовый логотип.
@@ -124,7 +120,7 @@ a:focus-visible {
 .site-logo {
   font-weight: bold;
   text-decoration: none;
-  color: #222222;
+  color: var(--color-text);
 }
 
 /*
@@ -132,7 +128,7 @@ a:focus-visible {
 */
 .site-nav__list {
   padding: 0;
-  margin: 16px 0 0;
+  margin: var(--space-md) 0 0;
   list-style: none;
 }
 
@@ -140,28 +136,25 @@ a:focus-visible {
   Добавляем расстояние между пунктами меню.
 */
 .site-nav__list li {
-  margin-bottom: 8px;
+  margin-bottom: var(--space-sm);
 }
 
 /*
   Оформляем ссылки меню.
 */
 .site-nav__list a {
-  color: #0057b8;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
-/*
-  При наведении мыши подчёркиваем ссылку.
-  Подробно состояния интерфейса будут рассмотрены в практической работе 1.7.
-*/
 .site-nav__list a:hover {
   text-decoration: underline;
 }
 
 /* ===============================
    4. Компоненты страницы
-  =============================== */
+   =============================== */
+
 .hero {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
@@ -175,22 +168,6 @@ a:focus-visible {
   margin: 0 auto var(--space-xl);
 }
 
-.section h2 {
-  margin-top: 0;
-}
-
-
-/*
-  Общий класс для разделов страницы.
-*/
-.section {
-  max-width: 1100px;
-  margin: 0 auto 32px;
-}
-
-/*
-  Убираем лишний верхний отступ у заголовков разделов.
-*/
 .section h2 {
   margin-top: 0;
 }
@@ -211,14 +188,6 @@ a:focus-visible {
   margin-top: 0;
 }
 
-
-/*
-  Убираем лишний верхний отступ у заголовка карточки.
-*/
-.product-card h3 {
-  margin-top: 0;
-}
-
 .aside-info {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
@@ -227,31 +196,12 @@ a:focus-visible {
   background-color: var(--color-surface);
 }
 
-
-.product-card {
-  margin-bottom: 16px;
-  padding: 16px;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  background-color: #ffffff;
-}
-
-/*
-  Убираем лишний верхний отступ у заголовка карточки.
-*/
-.product-card h3 {
-  margin-top: 0;
-}
-
 /* ===============================
    5. Форма и модальное окно
-  =============================== */
-/*
-  Модальное окно.
-  Элемент dialog сам умеет открываться поверх страницы.
-*/
+   =============================== */
+
 .order-dialog {
-  width: min(100% - 32px, 560px);
+  width: min(100% - var(--space-xl), 560px);
   padding: var(--space-lg);
   border: none;
   border-radius: var(--radius-lg);
@@ -290,10 +240,6 @@ a:focus-visible {
   color: var(--color-muted);
 }
 
-
-/*
-  Видимый фокус для клавиатурной навигации.
-*/
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
@@ -308,22 +254,21 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+.order-form:focus-within .form-field:not(:focus-within) {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
 [aria-invalid="true"] {
   border-color: var(--color-danger);
 }
 
-/*
-  Кнопки формы.
-*/
 .form-actions {
   display: flex;
-  gap: 12px;
-  margin-top: 20px;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
 }
 
-/*
-  Сообщение об успешной отправке.
-*/
 .success-message {
   max-width: var(--container-width);
   margin: var(--space-lg) auto;
