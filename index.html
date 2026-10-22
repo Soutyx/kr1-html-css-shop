@@ -1,129 +1,420 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Учебный интернет-магазин ShopProject: популярные товары, преимущества проекта и форма обратной связи.">
-  <title>Главная — Учебный интернет-магазин</title>
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="ShopProject">
-  <meta property="og:title" content="Главная — Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный интернет-магазин ShopProject: популярные товары, преимущества проекта и форма обратной связи.">
-  <meta property="og:url" content="https://soutyx.github.io/kr1-html-css-shop/">
-  <meta property="og:image" content="https://soutyx.github.io/kr1-html-css-shop/images/preview.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="ShopProject — учебный интернет-магазин">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
-</head>
-<body>
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li><a href="index.html" aria-current="page">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <section class="hero">
-      <h1>Учебный интернет-магазин</h1>
-      <p>
-        ShopProject — учебный многостраничный сайт интернет-магазина.
-        Посмотрите популярные товары, откройте полный каталог
-        или оставьте заявку через форму обратной связи.
-      </p>
-      <a class="button" href="catalog.html">Открыть каталог</a>
-      <a class="hero-link" href="#popular">Популярные товары</a>
-    </section>
-
-    <section class="section" id="advantages">
-      <h2>Преимущества проекта</h2>
-      <ul class="advantages-list">
-        <li>понятная семантическая HTML-структура;</li>
-        <li>единая навигация между страницами;</li>
-        <li>быстрые переходы к разделам по якорным ссылкам;</li>
-        <li>форма заявки с проверкой заполнения полей.</li>
-      </ul>
-      <a href="#contacts">Перейти к обратной связи</a>
-    </section>
-
-    <section class="section" id="popular">
-      <h2>Популярные товары</h2>
-      <div class="products-grid">
-        <article class="product-card">
-          <h3>Товар 1</h3>
-          <p>Краткое описание учебного товара.</p>
-          <p>Цена: 1000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
-        </article>
-
-        <article class="product-card">
-          <h3>Товар 2</h3>
-          <p>Краткое описание учебного товара.</p>
-          <p>Цена: 1500 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 2">
-            Заказать
-          </button>
-        </article>
-
-        <article class="product-card">
-          <h3>Товар 3</h3>
-          <p>Краткое описание учебного товара.</p>
-          <p>Цена: 2000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 3">
-            Заказать
-          </button>
-        </article>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Учебный интернет-магазин — ShopProject
+    </title>
+    <meta name="description" content="Товары и услуги для рабочего места, отзывы, ответы на вопросы и форма заявки.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:title" content="Учебный интернет-магазин — ShopProject">
+    <meta property="og:description" content="Товары и услуги для рабочего места, отзывы, ответы на вопросы и форма заявки.">
+    <meta property="og:url" content="https://soutyx.github.io/kr1-html-css-shop/">
+    <meta property="og:image" content="https://soutyx.github.io/kr1-html-css-shop/images/preview.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer>
+    </script>
+  </head>
+  <body id="top">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="index.html">
+          ShopProject
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <ul class="site-nav__list">
+            <li class="site-nav__item">
+              <a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">
+                Главная
+              </a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="catalog.html">
+                Каталог
+              </a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="product.html">
+                Товары и услуги
+              </a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="services.html">
+                Сервис
+              </a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="delivery.html">
+                Доставка
+              </a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="order.html">
+                Заявка
+              </a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="contacts.html">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </section>
-
-    <section class="section" id="contacts">
-      <h2>Обратная связь</h2>
-      <p>Оставьте заявку на товар или задайте вопрос через форму в модальном окне.</p>
-      <button class="button" type="button" data-open-order>Оставить заявку</button>
-      <p><a href="contacts.html">Контактная информация магазина</a></p>
-      <p class="success-message" id="success-message" role="status" hidden>
-        Заявка проверена. В учебной версии данные не отправляются на сервер.
-      </p>
-    </section>
-
-    <aside class="aside-info">
-      <h2>Информация для студентов</h2>
-      <p>
-        Проект выполнен в рамках дисциплины «Фронтенд и бэкенд разработка».
-        На сайте доступны главная страница, каталог и контакты.
+    </header>
+    <main class="page-main" id="main">
+      <section class="hero">
+        <h1 class="hero__title">
+          Учебный интернет-магазин
+        </h1>
+        <p>Товары и услуги для удобного рабочего места: сравните характеристики и выберите подходящий комплект.</p>
+        <a class="button" href="catalog.html">
+          Открыть каталог
+        </a>
+        <a class="hero__link" href="#popular">
+          Популярные товары
+        </a>
+      </section>
+      <section class="section" id="advantages">
+        <h2 class="section__title">
+          Как выбрать комплект
+        </h2>
+        <p>
+          Начните с того, как вы проводите время за компьютером. Для ежедневного набора текста важно расположение клавиш, для видеозвонков — разборчивая передача голоса, а для небольшого стола — размеры устройств и длина кабелей.
+        </p>
+        <ul class="advantages-list">
+          <li>
+            <strong>
+              Совместимость.
+            </strong>
+            Сверьте порты компьютера и тип подключения выбранного устройства. USB-A, USB-C и аудиоразъём не взаимозаменяемы без подходящих переходников.
+          </li>
+          <li>
+            <strong>
+              Удобство.
+            </strong>
+            Учитывайте размер ладони, высоту экрана и свободное место на столе. Полезно заранее представить, где будут лежать тетради и проходить кабели.
+          </li>
+          <li>
+            <strong>
+              Задачи.
+            </strong>
+            Компактная клавиатура удобна для текста, но для регулярной работы с числами может понадобиться цифровой блок. Гарнитура нужна прежде всего там, где важен микрофон.
+          </li>
+          <li>
+            <strong>
+              Понятный выбор.
+            </strong>
+            В каждой карточке есть описание, цена и переход к характеристикам. На отдельных страницах перечислены ограничения и рекомендации перед оформлением заявки.
+          </li>
+        </ul>
+        <a href="#contacts">
+          Перейти к обратной связи
+        </a>
+      </section>
+      <section class="section" id="popular">
+        <h2 class="section__title">
+          Популярные товары
+        </h2>
+        <div class="products-grid">
+          <article class="product-card product-card--featured">
+            <span class="product-card__badge">
+              Хит
+            </span>
+            <img class="product-card__image" src="images/keyboard.jpg" alt="Компактная клавиатура со светлыми клавишами на рабочем столе" width="1000" height="700" loading="lazy" decoding="async">
+            <h3 class="product-card__title">
+              Клавиатура Compact
+            </h3>
+            <p class="product-card__description">
+              Компактная клавиатура для небольшого стола: отдельные стрелки, привычные сочетания клавиш и проводное подключение без батареек. Подойдёт для конспектов, переписки и работы с документами.
+            </p>
+            <p class="product-card__price">
+              2 400 ₽
+            </p>
+            <a class="product-card__link" href="product-keyboard.html">
+              Подробнее
+            </a>
+            <button class="button product-card__button" type="button" data-product="Клавиатура Compact" data-open-order>
+              Заказать
+            </button>
+          </article>
+          <article class="product-card">
+            <img class="product-card__image" src="images/mouse.jpg" alt="Чёрная компьютерная мышь рядом с клавиатурой" width="1000" height="700" loading="lazy" decoding="async">
+            <h3 class="product-card__title">
+              Мышь Everyday
+            </h3>
+            <p class="product-card__description">
+              Проводная оптическая мышь для браузера, документов и учебных программ. Симметричная форма, три кнопки и чувствительность 1600 dpi подходят для повседневных задач.
+            </p>
+            <p class="product-card__price">
+              1 200 ₽
+            </p>
+            <a class="product-card__link" href="product-mouse.html">
+              Подробнее
+            </a>
+            <button class="button product-card__button" type="button" data-product="Мышь Everyday" data-open-order>
+              Заказать
+            </button>
+          </article>
+          <article class="product-card product-card--new">
+            <span class="product-card__badge">
+              Новинка
+            </span>
+            <img class="product-card__image" src="images/headphones.jpg" alt="Белые полноразмерные наушники на светлом фоне" width="1000" height="1000" loading="lazy" decoding="async">
+            <h3 class="product-card__title">
+              Наушники Study
+            </h3>
+            <p class="product-card__description">
+              Полноразмерная гарнитура для дистанционных занятий и звонков. Закрытые чашки, регулируемый микрофон и кабель 1,8 м помогают удобно устроиться за рабочим столом.
+            </p>
+            <p class="product-card__price">
+              3 200 ₽
+            </p>
+            <a class="product-card__link" href="product-headphones.html">
+              Подробнее
+            </a>
+            <button class="button product-card__button" type="button" data-product="Наушники Study" data-open-order>
+              Заказать
+            </button>
+          </article>
+        </div>
+      </section>
+      <section class="section reviews" id="reviews">
+        <h2 class="section__title">
+          Отзывы
+        </h2>
+        <div class="reviews__summary">
+          <span class="rating-stars rating-stars--average" role="img" aria-label="Средняя оценка 4,7 из 5">
+            <span aria-hidden="true" class="rating-stars__base">
+              ★★★★★
+            </span>
+            <span aria-hidden="true" class="rating-stars__fill">
+              ★★★★★
+            </span>
+          </span>
+          <strong class="reviews__score">
+            4,7 из 5
+          </strong>
+          <span class="reviews__count">
+            3 отзыва
+          </span>
+        </div>
+        <p>
+          Три примера пользовательского опыта: выбор оборудования, работа с гарнитурой и помощь с совместимостью. Оценки относятся к демонстрационным отзывам учебного проекта.
+        </p>
+        <div class="reviews__list">
+          <figure class="review">
+            <div class="review__rating">
+              <span class="rating-stars" role="img" aria-label="5 из 5 звёзд"><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span></span>
+              <span>
+                5 из 5
+              </span>
+            </div>
+            <blockquote class="review__text">
+              <p>Компактная клавиатура удобно разместилась рядом с тетрадями. Для конспектов и повседневной работы клавиш хватает.</p>
+            </blockquote>
+            <figcaption class="review__author">
+              Анна
+              <span class="review__product">
+                Клавиатура Compact
+              </span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <div class="review__rating">
+              <span class="rating-stars" role="img" aria-label="4 из 5 звёзд"><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span class="rating-stars__empty" aria-hidden="true">☆</span></span>
+              <span>
+                4 из 5
+              </span>
+            </div>
+            <blockquote class="review__text">
+              <p>Для онлайн-занятий гарнитура подошла: собеседников слышно хорошо, микрофон удобно регулируется. При долгом использовании делаю перерывы.</p>
+            </blockquote>
+            <figcaption class="review__author">
+              Михаил
+              <span class="review__product">
+                Наушники Study
+              </span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <div class="review__rating">
+              <span class="rating-stars" role="img" aria-label="5 из 5 звёзд"><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span></span>
+              <span>
+                5 из 5
+              </span>
+            </div>
+            <blockquote class="review__text">
+              <p>Помогли разобраться с разъёмами ноутбука и подобрать совместимые устройства. Получила понятный список рекомендаций без лишних покупок.</p>
+            </blockquote>
+            <figcaption class="review__author">
+              Ирина
+              <span class="review__product">
+                Консультация по выбору
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="section faq" id="faq">
+        <h2 class="section__title">
+          Частые вопросы
+        </h2>
+        <p>
+          Здесь собраны ответы о выборе техники, оформлении заявки и работе учебного магазина. Если вопрос связан с конкретным устройством, сначала проверьте его отдельную страницу: описание поможет сформулировать запрос точнее.
+        </p>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Как оставить заявку?
+          </summary>
+          <div class="faq__answer">
+            <p>
+              Найдите нужную позицию в каталоге и откройте подробное описание: там указаны назначение, параметры и ограничения. Затем перейдите на страницу «Заявка», выберите товар или услугу и заполните имя, e-mail, телефон, тему обращения и согласие. В комментарии можно написать модель компьютера, вопросы о подключении и пожелания по комплекту.
+            </p>
+            <p>
+              После проверки формы появится сообщение о результате. В учебной версии данные не отправляются на сервер и заказ не создаётся. На главной странице доступен также быстрый вариант — кнопка «Заказать» открывает модальное окно с названием выбранного товара.
+            </p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Можно ли оплатить заказ на сайте?
+          </summary>
+          <div class="faq__answer">
+            <p>
+              Оплата в этом проекте не подключена. Не нужно вводить номер карты, платёжный код или банковские реквизиты: форма запрашивает только данные для учебной проверки заявки. Появление сообщения об успешной проверке не означает оплату или резервирование товара.
+            </p>
+            <p>
+              Перед покупкой в реальном магазине необходимо отдельно согласовать итоговую цену, комплектацию, способ получения и срок передачи. О том, какие вопросы полезно уточнить заранее, можно прочитать на странице
+              <a href="delivery.html">
+                «Доставка и получение»
+              </a>
+              .
+            </p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Как работают фильтры каталога?
+          </summary>
+          <div class="faq__answer">
+            <p>
+              Сейчас это статический макет по требованиям КР №1: категории можно отметить, а в поля цены — ввести значения, но список товаров от этого не изменится. Кнопка «Применить» отключена, чтобы интерфейс не обещал ещё не реализованную фильтрацию. Кнопка «Сбросить поля» возвращает элементы формы в исходное состояние.
+            </p>
+            <p>
+              Для быстрого перехода используйте ссылки «Аксессуары», «Аудио» и «Услуги» в начале каталога. На широком экране блок фильтров остаётся под шапкой при прокрутке; на телефоне он расположен перед карточками и не занимает экран поверх товаров.
+            </p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Почему некоторые товары недоступны?
+          </summary>
+          <div class="faq__answer">
+            <p>
+              Пометка «Нет в наличии» означает, что позиция временно недоступна для заявки. У такой карточки отключена кнопка заказа, а на странице оформления этот товар нельзя выбрать в списке. При этом описание и характеристики остаются открытыми, чтобы можно было сравнить устройство с другими вариантами.
+            </p>
+            <p>
+              Посмотрите доступные позиции той же категории или воспользуйтесь
+              <a href="services.html">
+                помощью с выбором
+              </a>
+              , если нужен совместимый комплект. В текущем учебном ассортименте недоступен USB-концентратор; автоматического уведомления о поступлении и резервирования на сайте нет.
+            </p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Где посмотреть характеристики?
+          </summary>
+          <div class="faq__answer">
+            <p>
+              Нажмите «Подробнее» в карточке: откроется отдельная страница выбранного товара или услуги. На ней размещены фотография, развёрнутое описание, рекомендации по применению, цена и таблица характеристик. Все позиции также собраны в общем разделе
+              <a href="product.html">
+                «Товары и услуги»
+              </a>
+              .
+            </p>
+            <p>
+              При сравнении смотрите не только на цену. Для периферии важны тип разъёма, размеры и расположение кабеля; для услуги — продолжительность, формат и результат. Фотографии иллюстрируют тип устройства, поэтому окончательный выбор стоит сверять с текстовым описанием.
+            </p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Как понять, подойдёт ли устройство к моему компьютеру?
+          </summary>
+          <div class="faq__answer">
+            <p>
+              Запишите модель компьютера и проверьте доступные разъёмы. Для USB-устройства нужен совместимый свободный порт; для гарнитуры — подходящий аудиоразъём. Если используется переходник или концентратор, учитывайте не только форму разъёма, но и поддерживаемые функции и питание.
+            </p>
+            <p>
+              При сомнениях укажите модель устройства и предполагаемое подключение в комментарии к заявке. О составе консультации и подготовке к ней рассказано на странице
+              <a href="services.html">
+                «Сервис и помощь с выбором»
+              </a>
+              .
+            </p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Чем консультация отличается от настройки?
+          </summary>
+          <div class="faq__answer">
+            <p>
+              Консультация помогает выбрать ещё не купленные устройства: определить нужные характеристики, сравнить варианты и проверить совместимость. Настройка предназначена для уже собранного рабочего места — проверки подключения, звука, микрофона и основных параметров системы.
+            </p>
+            <p>
+              В учебном каталоге консультация рассчитана на 30 минут, настройка — на 60 минут. Стоимость оборудования, ремонт и установка платных программ в услуги не входят. Подробный перечень задач доступен на отдельных страницах услуг.
+            </p>
+          </div>
+        </details>
+      </section>
+      <section class="section" id="contacts">
+        <h2 class="section__title">
+          Обратная связь
+        </h2>
+        <p>
+          Оставьте заявку на товар или задайте вопрос через форму в модальном окне.
+        </p>
+        <button class="button" type="button" data-open-order>
+          Оставить заявку
+        </button>
+        <p>
+          <a href="contacts.html">
+            Контактная информация магазина
+          </a>
+        </p>
+        <p class="success-message" id="success-message" role="status" hidden>
+          Заявка проверена. В учебной версии данные не отправляются на сервер.
+        </p>
+      </section>
+      <aside class="aside-info">
+        <h2 class="section__title">
+          Информация для студентов
+        </h2>
+        <p>
+          Проект выполнен в рамках дисциплины «Фронтенд и бэкенд разработка».
+        На сайте доступны каталог, описания товаров и услуг, страница заявки и контакты.
         Форма заявки демонстрирует проверку данных без подключения backend.
-      </p>
-    </aside>
-  </main>
-  <footer>
-    <div class="site-footer">
-      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
-      <p><a href="contacts.html">Контактная информация</a></p>
-    </div>
-  </footer>
-<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-  <h2 id="order-dialog-title" tabindex="-1" autofocus>Оформление заявки</h2>
-
-  <form class="order-form" id="order-form" action="#" method="post" novalidate>
-    <input id="selected-product" name="selected-product" type="hidden">
-
-    <div class="form-field">
-      <label for="order-name">Имя</label>
-      <input
+        </p>
+      </aside>
+      <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+        <h2 class="order-dialog__title" id="order-dialog-title" tabindex="-1">
+          Оформление заявки
+        </h2>
+        <p class="order-dialog__product" id="dialog-product">
+        </p>
+        <form class="order-form" id="order-form" action="#" method="post" novalidate>
+          <input class="order-form__input" id="selected-product" name="selected-product" type="hidden">
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-name">
+              Имя
+            </label>
+            <input class="order-form__input"
         id="order-name"
         name="name"
         type="text"
@@ -132,11 +423,12 @@
         autocomplete="given-name"
         required
       >
-    </div>
-
-    <div class="form-field">
-      <label for="order-email">E-mail</label>
-      <input
+          </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-email">
+              E-mail
+            </label>
+            <input class="order-form__input"
         id="order-email"
         name="email"
         type="email"
@@ -144,12 +436,13 @@
         autocomplete="email"
         required
       >
-    </div>
-
-    <div class="form-field">
-      <label for="order-phone">Телефон</label>
-      <input
-        id="order-phone"
+          </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-phone">
+              Телефон
+            </label>
+            <input class="order-form__input"
+        id="order-phone" aria-describedby="phone-hint" autocomplete="tel"
         name="phone"
         type="tel"
         inputmode="tel"
@@ -157,55 +450,129 @@
         pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
         required
       >
-      <small>Формат: +7 (900) 000-00-00</small>
-    </div>
-
-    <div class="form-field">
-      <label for="order-date">Дата связи</label>
-      <input
+            <small class="order-form__hint" id="phone-hint">
+              Формат: +7 (900) 000-00-00
+            </small>
+          </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-date">
+              Дата связи
+            </label>
+            <input class="order-form__input"
         id="order-date"
         name="date"
         type="date"
       >
-    </div>
-
-    <div class="form-field">
-      <label for="order-topic">Тема заявки</label>
-      <select id="order-topic" name="topic" required>
-        <option value="">Выберите тему</option>
-        <option value="product">Заказ товара</option>
-        <option value="consultation">Консультация</option>
-        <option value="delivery">Доставка</option>
-      </select>
-    </div>
-
-    <div class="form-field">
-      <label for="order-comment">Комментарий</label>
-      <textarea
+          </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-topic">
+              Тема заявки
+            </label>
+            <select class="order-form__select" id="order-topic" name="topic" required>
+              <option value="">
+                Выберите тему
+              </option>
+              <option value="product">
+                Заказ товара
+              </option>
+              <option value="consultation">
+                Консультация
+              </option>
+              <option value="delivery">
+                Доставка
+              </option>
+            </select>
+          </div>
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-comment">
+              Комментарий
+            </label>
+            <textarea class="order-form__textarea"
         id="order-comment"
         name="comment"
         rows="4"
         placeholder="Укажите дополнительную информацию"
       ></textarea>
-    </div>
-
-    <div class="form-field form-field--checkbox">
-      <label>
-        <input
+          </div>
+          <div class="order-form__field order-form__field--checkbox">
+            <label class="order-form__label">
+              <input class="order-form__input"
           id="order-agreement"
           name="agreement"
           type="checkbox"
           required
         >
-        Я согласен на обработку данных
-      </label>
-    </div>
-
-    <div class="form-actions">
-      <button type="button" id="close-order-dialog">Закрыть</button>
-      <button type="submit">Отправить заявку</button>
-    </div>
-  </form>
-</dialog>
-</body>
+              Я согласен на обработку данных
+            </label>
+          </div>
+          <div class="order-form__actions">
+            <button class="button button--secondary" type="button" id="close-order-dialog">
+              Закрыть
+            </button>
+            <button class="button" type="submit">
+              Отправить заявку
+            </button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__credits">
+          Фотографии:
+          <a href="https://www.pexels.com/">
+            Pexels
+          </a>
+          .
+        </p>
+        <p class="site-footer__pages">
+          <a href="product.html">
+            Характеристики товаров
+          </a>
+          ·
+          <a href="services.html">
+            Сервис и помощь
+          </a>
+          ·
+          <a href="delivery.html">
+            Доставка и получение
+          </a>
+          ·
+          <a href="order.html">
+            Оформление заявки
+          </a>
+        </p>
+        <p>
+          &copy; 2026 ShopProject — учебный интернет-магазин.
+        </p>
+        <p>
+          <a href="index.html#advantages">
+            Преимущества
+          </a>
+          ·
+          <a href="index.html#popular">
+            Популярные товары
+          </a>
+          ·
+          <a href="index.html#reviews">
+            Отзывы
+          </a>
+          ·
+          <a href="index.html#faq">
+            Частые вопросы
+          </a>
+          ·
+          <a href="index.html#contacts">
+            Обратная связь
+          </a>
+        </p>
+        <p>
+          Демонстрационный проект. Покупки и отправка заявок на сервер не выполняются.
+        </p>
+      </div>
+    </footer>
+    <a class="back-to-top" href="#top" aria-label="Вернуться к началу страницы">
+      ↑ Наверх
+    </a>
+  </body>
 </html>

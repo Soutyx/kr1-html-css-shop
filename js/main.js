@@ -1,87 +1,50 @@
-// Получаем модальное окно по id.
+﻿// Скрипт отвечает только за ранее добавленные форму и модальное окно.
+// FAQ и кнопка «Наверх» работают средствами HTML/CSS.
 const orderDialog = document.getElementById('order-dialog');
-
-// Получаем кнопки заказа и общую кнопку обратной связи.
-const orderButtons = document.querySelectorAll('.product-card__button, [data-open-order]');
-
-// Получаем кнопку закрытия модального окна.
-const closeDialogButton = document.getElementById('close-order-dialog');
-
-// Получаем скрытое поле, в которое будет записан выбранный товар.
-const selectedProductInput = document.getElementById('selected-product');
-
-// Клик по свободному месту снимает выбор поля и возвращает светлый фон.
-orderDialog.addEventListener('click', (event) => {
-  if (!event.target.closest('input, select, textarea, label, button')) {
-    document.getElementById('order-dialog-title').focus({ preventScroll: true });
-  }
-});
-
-// Подключаем открытие формы к каждой кнопке.
-orderButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    // Получаем название товара из data-атрибута.
-    const productName = button.dataset.product || '';
-
-    // Убираем ошибки от предыдущей попытки заполнения.
-    orderForm.querySelectorAll('[aria-invalid]').forEach((field) => {
-      field.removeAttribute('aria-invalid');
-    });
-    successMessage.hidden = true;
-
-    // Записываем название товара в скрытое поле формы.
-    selectedProductInput.value = productName;
-
-    // Открываем модальное окно.
-    orderDialog.showModal();
-  });
-});
-
-// Закрываем модальное окно по кнопке «Закрыть».
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.close();
-});
-
-// Получаем форму заявки.
 const orderForm = document.getElementById('order-form');
-
-// Получаем сообщение об успешной отправке.
 const successMessage = document.getElementById('success-message');
+const selectedProductInput = document.getElementById('selected-product');
+let lastOrderButton = null;
 
-// Обрабатываем отправку формы.
-orderForm.addEventListener('submit', (event) => {
-  // Отменяем стандартную отправку формы,
-  // потому что backend пока не подключён.
-  event.preventDefault();
+function clearErrors() {
+  orderForm?.querySelectorAll('[aria-invalid]').forEach(field => field.removeAttribute('aria-invalid'));
+}
 
-  // Сбрасываем предыдущие признаки ошибок.
-  const formElements = Array.from(orderForm.elements);
-
-  formElements.forEach((element) => {
-    if (element.willValidate) {
-      element.removeAttribute('aria-invalid');
-    }
-  });
-
-  // Проверяем встроенные HTML-ограничения формы.
-  if (!orderForm.checkValidity()) {
-    formElements.forEach((element) => {
-      if (element.willValidate && !element.checkValidity()) {
-        element.setAttribute('aria-invalid', 'true');
-      }
+if (orderDialog && orderForm) {
+  document.querySelectorAll('[data-open-order]').forEach(button => {
+    button.addEventListener('click', () => {
+      lastOrderButton = button;
+      clearErrors();
+      successMessage.hidden = true;
+      selectedProductInput.value = button.dataset.product || '';
+      document.getElementById('dialog-product').textContent = button.dataset.product || 'Заявка или вопрос о каталоге';
+      orderDialog.showModal();
+      document.getElementById('order-name').focus();
     });
+  });
+  document.getElementById('close-order-dialog').addEventListener('click', () => orderDialog.close());
+  orderDialog.addEventListener('close', () => lastOrderButton?.focus({ preventScroll: true }));
+}
 
-    // Показываем стандартные сообщения браузера.
-    orderForm.reportValidity();
-    return;
-  }
-
-  // Показываем сообщение об успешной отправке.
-  successMessage.hidden = false;
-
-  // Очищаем форму.
-  orderForm.reset();
-
-  // Закрываем модальное окно.
-  orderDialog.close();
-});
+if (orderForm) {
+  orderForm.addEventListener('input', event => event.target.removeAttribute('aria-invalid'));
+  orderForm.addEventListener('reset', () => {
+    clearErrors();
+    successMessage.hidden = true;
+  });
+  orderForm.addEventListener('submit', event => {
+    event.preventDefault();
+    clearErrors();
+    if (!orderForm.checkValidity()) {
+      Array.from(orderForm.elements).forEach(field => {
+        if (field.willValidate && !field.checkValidity()) field.setAttribute('aria-invalid', 'true');
+      });
+      orderForm.reportValidity();
+      return;
+    }
+    orderForm.reset();
+    if (orderDialog?.open) orderDialog.close();
+    successMessage.hidden = false;
+    successMessage.scrollIntoView({ block: 'nearest' });
+  });
+}
