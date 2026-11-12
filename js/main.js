@@ -1,4 +1,4 @@
-﻿// Скрипт отвечает только за ранее добавленные форму и модальное окно.
+// Логика формы и модального окна из КР №1.
 // FAQ и кнопка «Наверх» работают средствами HTML/CSS.
 const orderDialog = document.getElementById('order-dialog');
 const orderForm = document.getElementById('order-form');
@@ -48,3 +48,39 @@ if (orderForm) {
     successMessage.scrollIntoView({ block: 'nearest' });
   });
 }
+
+// ПР 15. Типы данных, операторы и функции обработки товара.
+function formatPrice(price) {
+  return `${price} руб.`;
+}
+
+function calculateDiscount(price, discountPercent) {
+  return price * discountPercent / 100;
+}
+
+function calculateFinalPrice(price, discountPercent) {
+  return price - calculateDiscount(price, discountPercent);
+}
+
+function getProductStatus(product) {
+  if (product.isAvailable) {
+    return 'В наличии';
+  }
+  return 'Нет в наличии';
+}
+
+function createProductSummary(product) {
+  const finalPrice = calculateFinalPrice(product.price, product.discountPercent);
+  return `${product.title}: ${formatPrice(finalPrice)} Статус: ${getProductStatus(product)}.`;
+}
+
+const hasDiscount = product.discountPercent > 0;
+const canOrder = product.isAvailable && product.price > 0;
+
+console.table(product);
+console.log('Цена:', formatPrice(product.price));
+console.log('Размер скидки:', calculateDiscount(product.price, product.discountPercent));
+console.log('Итоговая цена:', calculateFinalPrice(product.price, product.discountPercent));
+console.log('Статус:', getProductStatus(product));
+console.log('Описание:', createProductSummary(product));
+console.log('Есть скидка:', hasDiscount, 'Можно заказать:', canOrder);

@@ -14,6 +14,8 @@
     <meta property="og:url" content="https://soutyx.github.io/kr1-html-css-shop/">
     <meta property="og:image" content="https://soutyx.github.io/kr1-html-css-shop/images/preview.jpg">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/data.js" defer></script>
     <script src="js/main.js" defer>
     </script>
   </head>
@@ -123,7 +125,7 @@
             <span class="product-card__badge">
               Хит
             </span>
-            <img class="product-card__image" src="images/keyboard.jpg" alt="Компактная клавиатура со светлыми клавишами на рабочем столе" width="1000" height="700" loading="lazy" decoding="async">
+            <img class="product-card__image" src="images/responsive/keyboard-640.jpg" srcset="images/responsive/keyboard-480.jpg 480w, images/responsive/keyboard-640.jpg 640w, images/responsive/keyboard-960.jpg 960w" sizes="(min-width: 1280px) 223px, (min-width: 1148px) 317px, (min-width: 1024px) calc((100vw - 198px) / 3), (min-width: 768px) calc((100vw - 140px) / 2), (min-width: 640px) calc((100vw - 124px) / 2), calc(100vw - 66px)" alt="Компактная клавиатура со светлыми клавишами на рабочем столе" width="1000" height="700" loading="lazy" decoding="async">
             <h3 class="product-card__title">
               Клавиатура Compact
             </h3>
@@ -141,7 +143,7 @@
             </button>
           </article>
           <article class="product-card">
-            <img class="product-card__image" src="images/mouse.jpg" alt="Чёрная компьютерная мышь рядом с клавиатурой" width="1000" height="700" loading="lazy" decoding="async">
+            <img class="product-card__image" src="images/responsive/mouse-640.jpg" srcset="images/responsive/mouse-480.jpg 480w, images/responsive/mouse-640.jpg 640w, images/responsive/mouse-960.jpg 960w" sizes="(min-width: 1280px) 223px, (min-width: 1148px) 317px, (min-width: 1024px) calc((100vw - 198px) / 3), (min-width: 768px) calc((100vw - 140px) / 2), (min-width: 640px) calc((100vw - 124px) / 2), calc(100vw - 66px)" alt="Чёрная компьютерная мышь рядом с клавиатурой" width="1000" height="700" loading="lazy" decoding="async">
             <h3 class="product-card__title">
               Мышь Everyday
             </h3>
@@ -162,7 +164,7 @@
             <span class="product-card__badge">
               Новинка
             </span>
-            <img class="product-card__image" src="images/headphones.jpg" alt="Белые полноразмерные наушники на светлом фоне" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="product-card__image" src="images/responsive/headphones-640.jpg" srcset="images/responsive/headphones-480.jpg 480w, images/responsive/headphones-640.jpg 640w, images/responsive/headphones-960.jpg 960w" sizes="(min-width: 1280px) 223px, (min-width: 1148px) 317px, (min-width: 1024px) calc((100vw - 198px) / 3), (min-width: 768px) calc((100vw - 140px) / 2), (min-width: 640px) calc((100vw - 124px) / 2), calc(100vw - 66px)" alt="Белые полноразмерные наушники на светлом фоне" width="1000" height="1000" loading="lazy" decoding="async">
             <h3 class="product-card__title">
               Наушники Study
             </h3>
@@ -483,7 +485,7 @@
               </option>
             </select>
           </div>
-          <div class="order-form__field">
+          <div class="order-form__field order-form__field--wide">
             <label class="order-form__label" for="order-comment">
               Комментарий
             </label>
@@ -571,7 +573,7 @@
         </p>
       </div>
     </footer>
-    <a class="back-to-top" href="#top" aria-label="Вернуться к началу страницы">
+    <a class="back-to-top" href="#top">
       ↑ Наверх
     </a>
   </body>
