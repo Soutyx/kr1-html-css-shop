@@ -14,6 +14,8 @@
     <meta property="og:url" content="https://soutyx.github.io/kr1-html-css-shop/order.html">
     <meta property="og:image" content="https://soutyx.github.io/kr1-html-css-shop/images/preview.jpg">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/data.js" defer></script>
     <script src="js/main.js" defer>
     </script>
   </head>
@@ -84,7 +86,7 @@
           Учебная форма: данные проверяются в браузере и не отправляются на сервер.
         </p>
         <form class="order-form" id="order-form" action="#" method="post" novalidate aria-describedby="order-note">
-          <div class="order-form__field">
+          <div class="order-form__field order-form__field--wide">
             <label class="order-form__label" for="selected-product">
               Товар или услуга
             </label>
@@ -191,7 +193,7 @@
               </option>
             </select>
           </div>
-          <div class="order-form__field">
+          <div class="order-form__field order-form__field--wide">
             <label class="order-form__label" for="order-comment">
               Комментарий
             </label>
@@ -282,7 +284,7 @@
         </p>
       </div>
     </footer>
-    <a class="back-to-top" href="#top" aria-label="Вернуться к началу страницы">
+    <a class="back-to-top" href="#top">
       ↑ Наверх
     </a>
   </body>

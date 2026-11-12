@@ -14,6 +14,8 @@
     <meta property="og:url" content="https://soutyx.github.io/kr1-html-css-shop/product-keyboard.html">
     <meta property="og:image" content="https://soutyx.github.io/kr1-html-css-shop/images/preview.jpg">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/data.js" defer></script>
     <script src="js/main.js" defer>
     </script>
   </head>
@@ -74,7 +76,10 @@
         </span>
       </nav>
       <article class="product-details section" id="keyboard">
-        <img class="product-details__image" src="images/keyboard.jpg" alt="Компактная клавиатура со светлыми клавишами на рабочем столе" width="1000" height="700" decoding="async">
+        <picture>
+          <source media="(min-width: 900px)" srcset="images/responsive/keyboard-480.jpg 480w, images/responsive/keyboard-640.jpg 640w, images/responsive/keyboard-960.jpg 960w" sizes="(min-width: 1148px) 534px, (min-width: 900px) calc((100vw - 80px) / 2), (min-width: 768px) calc(100vw - 48px), calc(100vw - 32px)">
+          <img class="product-details__image" src="images/responsive/keyboard-640.jpg" srcset="images/responsive/keyboard-480.jpg 480w, images/responsive/keyboard-640.jpg 640w, images/responsive/keyboard-960.jpg 960w" sizes="(min-width: 1148px) 534px, (min-width: 900px) calc((100vw - 80px) / 2), (min-width: 768px) calc(100vw - 48px), calc(100vw - 32px)" alt="Компактная клавиатура со светлыми клавишами на рабочем столе" width="1000" height="700" decoding="async">
+        </picture>
         <div class="product-details__content">
           <h1 class="product-details__title">
             Клавиатура Compact
@@ -94,7 +99,8 @@
           <p class="product-details__price">
             2 400 ₽
           </p>
-          <table class="specifications">
+          <div class="table-wrapper" tabindex="0" role="region" aria-label="Таблица характеристик с горизонтальной прокруткой">
+<table class="specifications">
             <caption class="specifications__caption">
               Характеристики: Клавиатура Compact
             </caption>
@@ -133,6 +139,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
           <a class="button" href="order.html">
             Оставить заявку
           </a>
@@ -216,7 +223,7 @@
         </p>
       </div>
     </footer>
-    <a class="back-to-top" href="#top" aria-label="Вернуться к началу страницы">
+    <a class="back-to-top" href="#top">
       ↑ Наверх
     </a>
   </body>

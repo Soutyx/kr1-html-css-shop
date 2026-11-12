@@ -14,6 +14,8 @@
     <meta property="og:url" content="https://soutyx.github.io/kr1-html-css-shop/product-hub.html">
     <meta property="og:image" content="https://soutyx.github.io/kr1-html-css-shop/images/preview.jpg">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/data.js" defer></script>
     <script src="js/main.js" defer>
     </script>
   </head>
@@ -74,7 +76,7 @@
         </span>
       </nav>
       <article class="product-details section" id="hub">
-        <img class="product-details__image" src="images/hub.jpg" alt="USB-концентратор, подключённый к ноутбуку" width="1000" height="667" decoding="async">
+        <img class="product-details__image" src="images/responsive/hub-640.jpg" srcset="images/responsive/hub-480.jpg 480w, images/responsive/hub-640.jpg 640w, images/responsive/hub-960.jpg 960w" sizes="(min-width: 1148px) 534px, (min-width: 900px) calc((100vw - 80px) / 2), (min-width: 768px) calc(100vw - 48px), calc(100vw - 32px)" alt="USB-концентратор, подключённый к ноутбуку" width="1000" height="667" decoding="async">
         <div class="product-details__content">
           <h1 class="product-details__title">
             USB-концентратор
@@ -94,7 +96,8 @@
           <p class="product-details__price">
             1 600 ₽
           </p>
-          <table class="specifications">
+          <div class="table-wrapper" tabindex="0" role="region" aria-label="Таблица характеристик с горизонтальной прокруткой">
+<table class="specifications">
             <caption class="specifications__caption">
               Характеристики: USB-концентратор
             </caption>
@@ -133,6 +136,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
           <button class="button" type="button" disabled>
             Нет в наличии
           </button>
@@ -216,7 +220,7 @@
         </p>
       </div>
     </footer>
-    <a class="back-to-top" href="#top" aria-label="Вернуться к началу страницы">
+    <a class="back-to-top" href="#top">
       ↑ Наверх
     </a>
   </body>
